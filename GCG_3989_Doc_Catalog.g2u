@@ -1,0 +1,40 @@
+﻿Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+
+'This script will change the Name of the Script 1 Button on the Shop Floor Data Collection Screen to Documents.
+'The GAB Script ATG_StandAlongCatalog will need to be attached to the Script 1 button in order to launch the
+'Document Catalog.
+'This project was Created for Percision Edge Surgical Products on 4/13/15 by SKT
+
+
+F.Intrinsic.Control.If(v.Caller.Hook, =, 15710)
+	V.Passed.000016.Set("Documents")
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,49710)
+	V.Passed.MainFormView-windowsUIButtonPanel-1.Set("Script3|~|Script2|~|Documents")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_PER_Doc_Catalog.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Main.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$SKT$}$4/13/2015 8:50:58 AM
+${$5$}$20.1.8474.24170$}$1
+${$6$}$tsmith$}$20230403091032954$}$xqPbj9atw05FglvzeFsZ9cqXP+qvG6tXO9VOOsVpNIMaZeg9K30fQNNzhDj/MbiEOL5/1VZ79Ew=
+Program.Sub.Comments.End
