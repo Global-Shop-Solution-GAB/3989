@@ -1,0 +1,1023 @@
+﻿Program.Sub.ScreenSU.Start
+gui.F_Main..create
+gui.F_Main..caption("Document Catalog")
+gui.F_Main..size(14985,6795)
+gui.F_Main..position(0,0)
+gui.F_Main..event(resize,F_Main_resize)
+gui.F_Main..event(unload,f_main_unload)
+gui.F_Main..alwaysontop(False)
+gui.F_Main..fontname("Arial")
+gui.F_Main..fontsize(8)
+gui.F_Main..forecolor(0)
+gui.F_Main..fontstyle(False,False,False,False,)
+gui.F_Main..BackColor(-2147483633)
+gui.F_Main..controlbox(True)
+gui.F_Main..maxbutton(True)
+gui.F_Main..minbutton(True)
+gui.F_Main..mousepointer(0)
+gui.F_Main..moveable(True)
+gui.F_Main..sizeable(True)
+gui.F_Main..ShowInTaskBar(True)
+gui.F_Main..titlebar(True)
+gui.F_Main.frmCtrls.create(frame)
+gui.F_Main.frmCtrls.caption("Frame")
+gui.F_Main.frmCtrls.size(5505,555)
+gui.F_Main.frmCtrls.position(10,5610)
+gui.F_Main.frmCtrls.visible(True)
+gui.F_Main.frmCtrls.borderstyle(0)
+gui.F_Main.frmCtrls.fontname("Arial")
+gui.F_Main.frmCtrls.fontsize(8)
+gui.F_Main.cmdSearch.create(button)
+gui.F_Main.cmdSearch.caption("Search")
+gui.F_Main.cmdSearch.visible(True)
+gui.F_Main.cmdSearch.size(855,375)
+gui.F_Main.cmdSearch.zorder(0)
+gui.F_Main.cmdSearch.position(65,50)
+gui.F_Main.cmdSearch.enabled(True)
+gui.F_Main.cmdSearch.parent("frmctrls")
+gui.F_Main.cmdSearch.fontname("Arial")
+gui.F_Main.cmdSearch.fontsize(8)
+gui.F_Main.cmdSearch.event(click,cmdsearch_click)
+gui.F_Main.cmdAdd.create(button)
+gui.F_Main.cmdAdd.caption("Add")
+gui.F_Main.cmdAdd.visible(True)
+gui.F_Main.cmdAdd.size(855,375)
+gui.F_Main.cmdAdd.zorder(0)
+gui.F_Main.cmdAdd.position(950,45)
+gui.F_Main.cmdAdd.enabled(True)
+gui.F_Main.cmdAdd.parent("frmctrls")
+gui.F_Main.cmdAdd.fontname("Arial")
+gui.F_Main.cmdAdd.fontsize(8)
+gui.F_Main.cmdAdd.event(click,cmdadd_click)
+gui.F_Main.gsfgQ.create(gsflexgrid)
+gui.F_Main.gsfgQ.FixedRows(0)
+gui.F_Main.gsfgQ.FixedCols(0)
+gui.F_Main.gsfgQ.visible(True)
+gui.F_Main.gsfgQ.size(14580,5340)
+gui.F_Main.gsfgQ.zorder(0)
+gui.F_Main.gsfgQ.position(95,200)
+gui.F_Main.gsfgQ.enabled(True)
+gui.F_Main.gsfgQ.event(commandclick,gsfgq_commandclick)
+gui.F_Main.cmdRefresh.create(button)
+gui.F_Main.cmdRefresh.caption("Refresh")
+gui.F_Main.cmdRefresh.visible(True)
+gui.F_Main.cmdRefresh.size(855,375)
+gui.F_Main.cmdRefresh.zorder(0)
+gui.F_Main.cmdRefresh.position(1830,45)
+gui.F_Main.cmdRefresh.enabled(True)
+gui.F_Main.cmdRefresh.parent("frmctrls")
+gui.F_Main.cmdRefresh.fontname("Arial")
+gui.F_Main.cmdRefresh.fontsize(8)
+gui.F_Main.cmdRefresh.event(click,cmdrefresh_click)
+
+
+gui.F_Search..create
+gui.F_Search..caption("Search")
+gui.F_Search..size(4875,3345)
+gui.F_Search..position(0,0)
+gui.F_Search..event(unload,f_search_unload)
+gui.F_Search..alwaysontop(False)
+gui.F_Search..fontname("Arial")
+gui.F_Search..fontsize(8)
+gui.F_Search..forecolor(0)
+gui.F_Search..fontstyle(,,,,)
+gui.F_Search..BackColor(-2147483633)
+gui.F_Search..controlbox(True)
+gui.F_Search..maxbutton(True)
+gui.F_Search..minbutton(True)
+gui.F_Search..mousepointer(0)
+gui.F_Search..moveable(True)
+gui.F_Search..sizeable(True)
+gui.F_Search..ShowInTaskBar(True)
+gui.F_Search..titlebar(True)
+gui.F_Search.dpLinkTypes.create(dropdownlist)
+gui.F_Search.dpLinkTypes.visible(True)
+gui.F_Search.dpLinkTypes.size(4350,330)
+gui.F_Search.dpLinkTypes.zorder(0)
+gui.F_Search.dpLinkTypes.position(155,310)
+gui.F_Search.dpLinkTypes.enabled(True)
+gui.F_Search.dpLinkTypes.fontname("Arial")
+gui.F_Search.dpLinkTypes.fontsize(8)
+gui.F_Search.lbl1.create(label,"LinkType",True,1935,255,1,155,95,True,0,Arial,8,-2147483633,0)
+gui.F_Search.cmdSearchDocs.create(button)
+gui.F_Search.cmdSearchDocs.caption("Search")
+gui.F_Search.cmdSearchDocs.visible(True)
+gui.F_Search.cmdSearchDocs.size(855,375)
+gui.F_Search.cmdSearchDocs.zorder(0)
+gui.F_Search.cmdSearchDocs.position(115,2355)
+gui.F_Search.cmdSearchDocs.enabled(True)
+gui.F_Search.cmdSearchDocs.fontname("Arial")
+gui.F_Search.cmdSearchDocs.fontsize(8)
+gui.F_Search.cmdSearchDocs.event(click,cmdsearchdocs_click)
+gui.F_Search.txtName.create(textbox,"",True,4320,300,0,155,890,True,0,Arial,8,-2147483643,1)
+gui.F_Search.txtDesciption.create(textbox,"",True,4335,300,0,155,1405,True,0,Arial,8,-2147483643,1)
+gui.F_Search.lbl2.create(label,"Document Name",True,1935,255,1,155,695,True,0,Arial,8,-2147483633,0)
+gui.F_Search.lbl3.create(label,"Document Description",True,1935,255,1,155,1220,True,0,Arial,8,-2147483633,0)
+gui.F_Search.dpDocGroup.create(dropdownlist)
+gui.F_Search.dpDocGroup.visible(True)
+gui.F_Search.dpDocGroup.size(4350,330)
+gui.F_Search.dpDocGroup.zorder(0)
+gui.F_Search.dpDocGroup.position(155,1945)
+gui.F_Search.dpDocGroup.enabled(True)
+gui.F_Search.dpDocGroup.fontname("Arial")
+gui.F_Search.dpDocGroup.fontsize(8)
+gui.F_Search.lbl4.create(label,"Document Group",True,1935,255,1,155,1775,True,0,Arial,8,-2147483633,0)
+gui.F_Search.dpLinkTypes.tabstop(True)
+gui.F_Search.dpLinkTypes.tabindex(1)
+gui.F_Search.txtName.tabstop(True)
+gui.F_Search.txtName.tabindex(2)
+gui.F_Search.txtDesciption.tabstop(True)
+gui.F_Search.txtDesciption.tabindex(3)
+gui.F_Search.cmdSearchDocs.tabstop(True)
+gui.F_Search.cmdSearchDocs.tabindex(4)
+gui.F_Search.dpDocGroup.tabstop(True)
+gui.F_Search.dpDocGroup.tabindex(15)
+
+
+gui.f_add..create
+gui.f_add..caption("File Association")
+gui.f_add..size(5760,6660)
+gui.f_add..position(0,0)
+gui.f_add..event(unload,f_add_unload)
+gui.f_add..alwaysontop(False)
+gui.f_add..fontname("Arial")
+gui.f_add..fontsize(8)
+gui.f_add..forecolor(0)
+gui.f_add..fontstyle(,,,,)
+gui.f_add..BackColor(-2147483633)
+gui.f_add..controlbox(True)
+gui.f_add..maxbutton(False)
+gui.f_add..minbutton(True)
+gui.f_add..mousepointer(0)
+gui.f_add..moveable(True)
+gui.f_add..sizeable(False)
+gui.f_add..ShowInTaskBar(True)
+gui.f_add..titlebar(True)
+gui.f_add.txtFile.create(textbox,"",True,4575,300,0,245,360,True,0,Arial,8,-2147483643,1)
+gui.f_add.txtFile.maxLength(400)
+gui.f_add.cmdBrowseFile.create(button)
+gui.f_add.cmdBrowseFile.caption("^")
+gui.f_add.cmdBrowseFile.visible(True)
+gui.f_add.cmdBrowseFile.size(390,300)
+gui.f_add.cmdBrowseFile.zorder(0)
+gui.f_add.cmdBrowseFile.position(4900,360)
+gui.f_add.cmdBrowseFile.enabled(True)
+gui.f_add.cmdBrowseFile.fontname("Arial")
+gui.f_add.cmdBrowseFile.fontsize(8)
+gui.f_add.cmdBrowseFile.event(click,cmdbrowsefile_click)
+gui.f_add.txtDescription.create(textbox,"",True,4590,330,0,245,875,True,0,Arial,8,-2147483643,1)
+gui.f_add.txtDescription.maxLength(30)
+gui.f_add.lbl2.create(label,"Description",True,1935,255,1,245,630,True,0,Arial,8,-2147483633,0)
+gui.f_add.dpGrp.create(dropdownlist)
+gui.f_add.dpGrp.visible(True)
+gui.f_add.dpGrp.size(4590,330)
+gui.f_add.dpGrp.zorder(0)
+gui.f_add.dpGrp.position(235,1460)
+gui.f_add.dpGrp.enabled(True)
+gui.f_add.dpGrp.fontname("Arial")
+gui.f_add.dpGrp.fontsize(8)
+gui.f_add.cmdSaveFile.create(button)
+gui.f_add.cmdSaveFile.caption("Save")
+gui.f_add.cmdSaveFile.visible(True)
+gui.f_add.cmdSaveFile.size(885,360)
+gui.f_add.cmdSaveFile.zorder(0)
+gui.f_add.cmdSaveFile.position(275,5685)
+gui.f_add.cmdSaveFile.enabled(True)
+gui.f_add.cmdSaveFile.fontname("Arial")
+gui.f_add.cmdSaveFile.fontsize(8)
+gui.f_add.cmdSaveFile.event(click,cmdsavefile_click)
+gui.f_add.lbl3.create(label,"Group",True,1935,255,1,245,1220,True,0,Arial,8,-2147483633,0)
+gui.f_add.txtFileNum.create(textbox,"",False,1215,300,0,1200,5700,True,0,Arial,8,255,1)
+gui.f_add.gsfgMeta.create(gsflexgrid)
+gui.f_add.gsfgMeta.FixedRows(0)
+gui.f_add.gsfgMeta.FixedCols(0)
+gui.f_add.gsfgMeta.visible(True)
+gui.f_add.gsfgMeta.size(4590,2850)
+gui.f_add.gsfgMeta.zorder(0)
+gui.f_add.gsfgMeta.position(245,2760)
+gui.f_add.gsfgMeta.enabled(True)
+gui.f_add.dpType.create(dropdownlist)
+gui.f_add.dpType.visible(True)
+gui.f_add.dpType.size(4590,330)
+gui.f_add.dpType.zorder(0)
+gui.f_add.dpType.position(245,2015)
+gui.f_add.dpType.enabled(True)
+gui.f_add.dpType.fontname("Arial")
+gui.f_add.dpType.fontsize(8)
+gui.f_add.lbl5.create(label,"Link Type",True,1935,255,1,290,1800,True,0,Arial,8,-2147483633,0)
+gui.f_add.chkPublic.create(checkbox)
+gui.f_add.chkPublic.caption("Public")
+gui.f_add.chkPublic.visible(True)
+gui.f_add.chkPublic.size(1080,255)
+gui.f_add.chkPublic.zorder(0)
+gui.f_add.chkPublic.position(4090,90)
+gui.f_add.chkPublic.enabled(True)
+gui.f_add.chkPublic.alignment(0)
+gui.f_add.chkPublic.fontname("Arial")
+gui.f_add.chkPublic.fontsize(8)
+gui.f_add.lbl6.create(label,"Meta Data",True,1935,255,1,290,2455,True,0,Arial,8,-2147483633,0)
+gui.f_add.dpToggle.create(dropdownlist)
+gui.f_add.dpToggle.visible(True)
+gui.f_add.dpToggle.size(1455,330)
+gui.f_add.dpToggle.zorder(0)
+gui.f_add.dpToggle.position(245,20)
+gui.f_add.dpToggle.enabled(True)
+gui.f_add.dpToggle.fontname("Arial")
+gui.f_add.dpToggle.fontsize(8)
+gui.f_add.txtFile.tabstop(True)
+gui.f_add.txtFile.tabindex(1)
+gui.f_add.chkPublic.tabstop(True)
+gui.f_add.chkPublic.tabindex(2)
+gui.f_add.cmdBrowseFile.tabstop(True)
+gui.f_add.cmdBrowseFile.tabindex(3)
+gui.f_add.txtDescription.tabstop(True)
+gui.f_add.txtDescription.tabindex(4)
+gui.f_add.dpGrp.tabstop(True)
+gui.f_add.dpGrp.tabindex(5)
+gui.f_add.dpType.tabstop(True)
+gui.f_add.dpType.tabindex(6)
+gui.f_add.cmdSaveFile.tabstop(True)
+gui.f_add.cmdSaveFile.tabindex(7)
+
+
+gui.F_Advance..create
+gui.F_Advance..caption("Document:")
+gui.F_Advance..size(15360,10695)
+gui.F_Advance..position(0,0)
+gui.F_Advance..event(unload,f_advance_unload)
+gui.F_Advance..alwaysontop(False)
+gui.F_Advance..fontname("Arial")
+gui.F_Advance..fontsize(8)
+gui.F_Advance..forecolor(0)
+gui.F_Advance..fontstyle(,,,,)
+gui.F_Advance..BackColor(-2147483633)
+gui.F_Advance..controlbox(True)
+gui.F_Advance..maxbutton(True)
+gui.F_Advance..minbutton(True)
+gui.F_Advance..mousepointer(0)
+gui.F_Advance..moveable(True)
+gui.F_Advance..sizeable(True)
+gui.F_Advance..ShowInTaskBar(True)
+gui.F_Advance..titlebar(True)
+gui.F_Advance.htmlX.create(htmlcontainer)
+gui.F_Advance.htmlX.visible(True)
+gui.F_Advance.htmlX.size(14790,9795)
+gui.F_Advance.htmlX.zorder(0)
+gui.F_Advance.htmlX.position(155,200)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.Global.sGrps.Declare(String)
+Variable.Global.iUser.Declare(Long,-1)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Coded by: JND
+'Project Start Date: 3/27/2011
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+Gui.F_Main.gsfgQ.Cols(11)
+Gui.F_Main.gsfgQ.Rows(2)
+Gui.F_Main.gsfgQ.TextMatrix(0,0,"ID")
+Gui.F_Main.gsfgQ.TextMatrix(1,0,"Description")
+Gui.F_Main.gsfgQ.TextMatrix(2,0,"Document")
+Gui.F_Main.gsfgQ.TextMatrix(3,0,"Group")
+Gui.F_Main.gsfgQ.Textmatrix(4,0,"Public")
+Gui.F_Main.gsfgQ.Textmatrix(5,0,"File Type")
+Gui.F_Main.gsfgQ.Textmatrix(6,0,"Link Type")
+Gui.F_Main.gsfgQ.TextMatrix(7,0,"Date Added")
+Gui.F_Main.gsfgQ.TextMatrix(8,0,"")
+Gui.F_Main.gsfgQ.SetColumnPercentages(".05:.2:.2:.1:.05:.05:.125:.075:.05:.05:.05")
+Gui.f_Main.gsfgQ.buildstyle(1,0,"type","locked","true")
+Gui.f_Main.gsfgQ.buildstyle(1,1,"type","locked","true")
+Gui.f_Main.gsfgQ.buildstyle(1,2,"type","locked","true")
+Gui.f_Main.gsfgQ.buildstyle(1,3,"type","locked","true")
+Gui.f_Main.gsfgQ.buildstyle(1,4,"type","locked","true")
+Gui.f_Main.gsfgQ.buildstyle(1,4,"type","checkbox","")
+Gui.f_Main.gsfgQ.buildstyle(1,5,"type","locked","true")
+Gui.f_Main.gsfgQ.buildstyle(1,6,"type","locked","true")
+Gui.f_Main.gsfgQ.buildstyle(1,7,"type","locked","true")
+Gui.f_Main.gsfgQ.buildstyle(1,8,"type","command","View")
+Gui.f_Main.gsfgQ.buildstyle(1,9,"type","command","Edit")
+Gui.f_Main.gsfgQ.buildstyle(1,10,"type","command","Delete")
+Gui.F_Main.gsfgQ.BuildStyle(1,1,"format","alignment",2)
+Gui.F_Main.gsfgQ.BuildStyle(1,0,"format","alignment",2)
+Gui.F_Main.gsfgQ.BuildStyle(1,2,"format","alignment",2)
+Gui.F_Main.gsfgQ.BuildStyle(1,3,"format","alignment",2)
+Gui.F_Main.gsfgQ.BuildStyle(1,4,"format","alignment",2)
+Gui.F_Main.gsfgQ.BuildStyle(1,5,"format","alignment",2)
+Gui.F_Main.gsfgQ.BuildStyle(1,6,"format","alignment",2)
+Gui.F_Main.gsfgQ.BuildStyle(1,7,"format","alignment",2)
+Gui.F_Main.gsfgQ.BuildStyle(1,8,"format","alignment",4)
+Gui.F_Main.gsfgQ.BuildStyle(1,9,"format","alignment",4)
+Gui.F_Main.gsfgQ.BuildStyle(1,10,"format","alignment",4)
+
+F.Intrinsic.Debug.SetLA("GridSetup")
+Gui.F_add.gsfgMeta.BuildStyle(1,0,"format","alignment",2)
+Gui.f_add.gsfgMeta.BuildStyle(1,0,"format","maxlength",50)
+Gui.f_add.gsfgMeta.SetProperty("enter",2)
+
+
+F.Intrinsic.Control.CallSub(Load_grp_security)
+
+F.Intrinsic.Debug.SetLA("Doc Group Security Loaded")
+
+
+f.Global.Security.getuserID(V.Caller.User,V.caller.companycode,V.global.iUser)
+
+F.Intrinsic.control.CallSub(Populate_grid,"sIDs","")
+Gui.f_Main.gsfgQ.Visible(True)
+Gui.F_Main..Show
+
+Program.Sub.Main.End
+
+program.sub.cmdsearchdocs_click.start
+'Search against record set
+
+V.Local.sQuery.Declare(String)
+V.Local.sData.Declare(String)
+V.Local.stype.Declare(String)
+V.Local.iRow.Declare(Long)
+V.Local.iIDs.Declare(String)
+V.Local.sret.Declare(String)
+
+V.Local.iX.Declare(Long)
+V.Local.sQuery.Set("SELECT * FROM ATG_StandAloneDocs ")
+
+F.Intrinsic.Control.If(V.Screen.F_Search!dpLinkTypes.text,<>,"")
+	F.Intrinsic.String.Split(V.Screen.F_Search!dpLinkTypes.Text,"-",V.Local.stype)
+	F.Intrinsic.string.Concat(" WHERE  linkType  = ",V.Local.sType," ",V.Local.sData)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_Search!dpDocGroup.text,<>,"")
+	F.Intrinsic.String.Split(V.Screen.F_Search!dpDocGroup.Text,"-",V.Local.stype)
+
+	F.Intrinsic.Control.If(V.Local.sData,=,"")
+		F.Intrinsic.string.Concat(" WHERE  Grp_ID = ",V.Local.sType," ",V.Local.sData)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.string.Concat(V.local.sdata," AND Grp_ID = ",V.Local.sType," ",V.Local.sData)
+	F.Intrinsic.Control.endif
+
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_Search!txtDesciption.Text,<>,"")
+	F.Intrinsic.Control.If(V.Local.sData,=,"")
+		F.Intrinsic.string.Concat(" WHERE description Like '%",V.Screen.F_Search!txtDesciption.text,"%' ",V.Local.sData)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.string.Concat(V.local.sdata," AND description Like '%",V.Screen.F_Search!txtDesciption.text,"%' ",V.Local.sData)
+	F.Intrinsic.Control.endif
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.F_Search!txtName.Text,<>,"")
+	F.Intrinsic.Control.If(V.Local.sData,=,"")
+		F.Intrinsic.string.Concat(" WHERE FILE Like '%",V.Screen.F_Search!txtName.text,"%' ",V.Local.sData)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.string.Concat(V.local.sdata," AND FILE Like '%",V.Screen.F_Search!txtName.text,"%' ",V.Local.sData)
+	F.Intrinsic.Control.endif
+F.Intrinsic.Control.endif
+F.Intrinsic.Control.If(V.Local.sData,=,"")
+	F.Intrinsic.string.Concat(" WHERE  (IsPublic = 1 or User_ID  = ",V.global.iUser," )",V.Local.sData)
+F.Intrinsic.Control.Else
+	F.Intrinsic.string.Concat(V.local.sdata," AND  (IsPublic = 1 or User_ID  = ",V.global.iUser," )",V.Local.sData)
+
+F.Intrinsic.Control.endif
+
+
+
+F.Intrinsic.String.Concat(V.Local.sQuery,V.Local.sData,V.Local.sQuery)
+
+'Load to grid show screen
+'Build list of ID's based on document group and link type access.
+'check for public.
+
+F.odbc.Connection!conx.OpenRecordsetRO("rst",V.Local.sQuery)
+
+F.Intrinsic.Control.DoUntil(V.ODBC.conx!rst.EOF,=,True)
+	F.Intrinsic.Control.If(V.Local.iIDs,=,"")
+		V.Local.iIDs.Set(V.ODBC.conx!rst.FieldVal!fileid)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat(V.Local.iIDs,":",V.ODBC.conx!rst.Fieldval!FileID,V.Local.iIDs)
+	F.Intrinsic.Control.endif
+	F.ODBC.conx!rst.MoveNext
+F.Intrinsic.Control.loop
+	
+F.ODBC.conX!rst.Close
+
+'F.Intrinsic.Control.If(V.Screen.F_Search!txtMeta.Text,<>,"")
+'	F.Global.DocumentControl.SearchStandAloneMetaData(V.Screen.F_Search!txtMeta.Text,V.Local.sRet)
+'	F.Intrinsic.Control.If(V.Local.sret,<>,"")
+'		F.Intrinsic.Control.If(V.Local.iIDs,=,"")
+'			V.Local.iIDs.Set(V.local.sret)
+'		F.Intrinsic.Control.Else
+'			F.Intrinsic.String.Concat(V.Local.iIDs,":",V.Local.sret,V.Local.iIDs)
+'		F.Intrinsic.Control.endif
+'	F.Intrinsic.Control.EndIf
+'
+'F.Intrinsic.Control.endif
+
+
+F.Intrinsic.Control.CallSub(Populate_grid,"sIDs",V.Local.iIDs,"bSearch","True")
+Gui.F_Search..Visible(false)
+
+program.sub.cmdsearchdocs_click.end
+
+program.sub.cmdsearch_click.start
+
+V.Local.shold.Declare(String)
+V.Local.bRet.Declare(Boolean)
+
+Gui.F_Search.dpLinkTypes.ClearItems
+Gui.F_Search.dpLinkTypes.AddItem(" ")
+Gui.F_Search.dpdocgroup.ClearItems
+Gui.F_Search.dpDocGroup.AddItem(" ")
+
+F.odbc.Connection!conX.OpenRecordsetRO("rst","SELECT * FROM ATG_StandAloneTYpes ORDER BY Link_Type")
+F.Intrinsic.Control.dountil(V.ODBC.conX!rst.EOF,=,True)
+	F.Intrinsic.String.Concat(V.ODBC.conX!rst.FieldValTrim!Link_Type," - ",V.odbc.conX!rst.FieldValTrim!Description,V.Local.shold)
+	Gui.F_Search.dpLinkTypes.AddItem(V.Local.shold)
+	F.ODBC.Conx!rst.MoveNext
+F.Intrinsic.Control.Loop
+F.ODBC.Conx!rst.Close
+
+
+F.odbc.Connection!conX.OpenRecordsetRO("rst","SELECT * FROM ATG_DOC_GRP ORDER BY GRP_ID")
+F.Intrinsic.Control.dountil(V.ODBC.conX!rst.EOF,=,True)
+	V.Local.bRet.Set(False)
+
+	F.Intrinsic.Control.If(V.Caller.User,<>,"SUPERVSR")
+		F.Intrinsic.Control.CallSub(Check_grp_security,"group",V.ODBC.conX!rst.FieldValTrim!GRP_ID)
+		V.Local.bRet.Set(V.Args.bRet)
+	F.Intrinsic.Control.Else
+		V.Local.bRet.Set(True)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.Local.bRet,=,True)
+		
+		F.Intrinsic.String.Concat(V.ODBC.conX!rst.FieldValTrim!GRP_ID," - ",V.odbc.conX!rst.FieldValTrim!GRP_NAME,V.Local.shold)
+
+		Gui.f_search.dpDocGroup.AddItem(V.Local.shold)
+	F.Intrinsic.Control.endif
+	F.ODBC.Conx!rst.MoveNext
+F.Intrinsic.Control.Loop
+F.ODBC.Conx!rst.Close
+
+Gui.F_Search..Show
+
+
+program.sub.cmdsearch_click.end
+
+program.sub.cmdadd_click.start
+F.Intrinsic.Control.CallSub(Prepareadd,"bEdit",False)
+Gui.f_add..Show
+Gui.F_Main..Enabled(false)
+
+program.sub.cmdadd_click.end
+
+program.sub.f_main_unload.start
+F.ODBC.Connection!conX.Close
+
+F.Intrinsic.Control.End
+
+program.sub.f_main_unload.end
+
+program.sub.flexgrid1_dblclick.start
+
+program.sub.flexgrid1_dblclick.end
+
+program.sub.f_main_resize.start
+V.local.width.declare(long)
+V.local.height.declare(long)
+v.local.x.declare(long)
+v.local.Y.declare(long)
+Function.Intrinsic.Control.If(Variable.Screen.F_Main.Width,<,14670)
+	Gui.F_Main..Size(14670,Variable.Screen.F_Main.Height)
+Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.If(Variable.Screen.F_Main.height,<,6795)
+	Gui.F_Main..Size(Variable.Screen.F_Main.Width,6795)
+Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Math.mult(Variable.Screen.F_Main.Height,0.826,Variable.Local.Y)
+Gui.F_Main.frmCtrls.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.F_Main.Height,0.786,Variable.Local.height)
+Function.Intrinsic.Math.mult(Variable.Screen.F_Main.Width,0.965,Variable.Local.width)
+Gui.F_Main.gsfgQ.Size(V.Local.width,V.Local.height)
+
+program.sub.f_main_resize.end
+
+program.sub.cmdbrowsefile_click.start
+V.Local.sfile.Declare(String)
+F.Intrinsic.UI.ShowOpenFileDialog("","","",V.Local.sFIle)
+F.Intrinsic.Control.If(V.Local.sfile,<>,"***CANCEL***")
+	Gui.f_add.txtFile.Text(V.Local.sfile)
+F.Intrinsic.Control.endif
+
+program.sub.cmdbrowsefile_click.end
+
+program.sub.cmdsavefile_click.start
+
+F.Intrinsic.Control.CallSub(Savenewfile)
+
+Gui.F_Main..Enabled(true)
+
+program.sub.cmdsavefile_click.end
+
+Program.Sub.populate_grp.Start
+
+V.Local.shold.Declare(String)
+V.Local.bRet.Declare(Boolean)
+
+Gui.f_add.dpGrp.ClearItems
+Gui.f_add.dpGrp.AddItem(" ")
+
+F.odbc.Connection!conX.OpenRecordsetRO("rst","SELECT * FROM ATG_DOC_GRP ORDER BY GRP_ID")
+F.Intrinsic.Control.dountil(V.ODBC.conX!rst.EOF,=,True)
+	V.Local.bRet.Set(False)
+
+	F.Intrinsic.Control.If(V.Caller.User,<>,"SUPERVSR")
+		F.Intrinsic.Control.CallSub(Check_grp_security,"group",V.ODBC.conX!rst.FieldValTrim!GRP_ID)
+		V.Local.bRet.Set(V.Args.bRet)
+	F.Intrinsic.Control.Else
+		V.Local.bRet.Set(True)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.Local.bRet,=,True)
+		
+		F.Intrinsic.String.Concat(V.ODBC.conX!rst.FieldValTrim!GRP_ID," - ",V.odbc.conX!rst.FieldValTrim!GRP_NAME,V.Local.shold)
+
+		Gui.f_add.dpGrp.AddItem(V.Local.shold)
+	F.Intrinsic.Control.endif
+	F.ODBC.Conx!rst.MoveNext
+F.Intrinsic.Control.Loop
+F.ODBC.Conx!rst.Close
+
+
+Program.Sub.populate_grp.End
+
+Program.Sub.populate_grid.Start
+V.Local.iIDs.Declare(String)
+V.Local.iX.Declare(Long)
+V.Local.sQuery.Declare(String)
+V.Local.sret.Declare(String)
+V.Local.iRow.Declare(Long)
+V.Local.bRet.Declare(Boolean)
+V.Local.bProc.Declare(Boolean)
+F.Intrinsic.UI.InvokeWaitDialog("Loading Documents...")
+Gui.F_Main.gsfgQ.Visible(false)
+
+F.Intrinsic.Control.If(V.Args.sIDs,=,"")
+	'Build list of ID's based on document group and link type access.
+	'check for public.
+	F.Intrinsic.Variable.ArgExists("bSearch",V.Local.bRet)
+
+	F.Intrinsic.Control.If(V.local.bRet,=,True)
+		F.Intrinsic.Control.If(V.local.iIDS.trim,=,"")
+			Gui.F_Main.gsfgQ.Rows(1)
+			Gui.F_Main.gsfgQ.Rows(2)
+			Gui.f_Main.gsfgQ.FixedRows(1)
+			Gui.f_Main.gsfgQ.FixedRows(1)
+			Gui.F_Main.gsfgQ.Visible(true)
+			F.Intrinsic.UI.CloseWaitDialog
+			F.Intrinsic.Control.exitsub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.String.Concat("SELECT FILEID FROM ATG_StandAloneDocs where User_ID = ",V.Global.iUser,V.Local.sQuery)
+	F.odbc.Connection!conx.OpenRecordsetRO("rst",V.Local.sQuery)
+	
+	F.Intrinsic.Control.DoUntil(V.ODBC.conx!rst.EOF,=,True)
+		F.Intrinsic.Control.If(V.Local.iIDs,=,"")
+			V.Local.iIDs.Set(V.ODBC.conx!rst.FieldVal!fileid)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Concat(V.Local.iIDs,":",V.ODBC.conx!rst.Fieldval!FileID,V.Local.iIDs)
+		F.Intrinsic.Control.endif
+		F.ODBC.conx!rst.MoveNext
+	F.Intrinsic.Control.loop
+	
+	F.ODBC.conX!rst.Close
+
+	V.Local.sQuery.Set("SELECT FILEID, GRP_ID FROM ATG_StandAloneDocs where  IsPublic  = 1 ")
+	F.odbc.Connection!conx.OpenRecordsetRO("rst",V.Local.sQuery)
+	
+	F.Intrinsic.Control.DoUntil(V.ODBC.conx!rst.EOF,=,True)
+		F.Intrinsic.Control.CallSub(Check_grp_security,"Group",V.ODBC.conx!rst.FieldVal!Grp_ID)
+		F.Intrinsic.Control.If(V.Args.bret,=,True)
+			F.Intrinsic.Control.If(V.Local.iIDs,=,"")
+			V.Local.iIDs.Set(V.ODBC.conx!rst.FieldVal!fileid)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Concat(V.Local.iIDs,":",V.ODBC.conx!rst.Fieldval!FileID,V.Local.iIDs)
+			F.Intrinsic.Control.endif
+		F.Intrinsic.Control.endif
+		F.ODBC.conx!rst.MoveNext
+	F.Intrinsic.Control.loop
+	
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.Else
+	V.Local.iIDs.Set(V.Args.sids)
+F.Intrinsic.Control.EndIf
+Gui.f_Main.gsfgQ.FixedRows(1)
+F.Intrinsic.Control.If(V.local.iIDS.trim,=,"")
+	Gui.F_Main.gsfgQ.Rows(1)
+	Gui.F_Main.gsfgQ.Rows(2)
+	Gui.f_Main.gsfgQ.FixedRows(1)
+	Gui.f_Main.gsfgQ.FixedRows(1)
+	Gui.F_Main.gsfgQ.Visible(true)
+	F.Intrinsic.UI.CloseWaitDialog
+	F.Intrinsic.Control.exitsub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Split(V.Local.iIDs,":",V.Local.iids)
+Gui.F_Main.gsfgQ.Rows(1)
+F.Intrinsic.String.RemoveArrayDuplicates(V.Local.iIDs,V.Local.iIDs)
+f.Intrinsic.Variable.sort(v.Local.iIDs,false,v.Local.iIDs)
+
+'F.Intrinsic.String.SortAsc(V.Local.iIDs,V.Local.iIDs)
+F.Intrinsic.Math.Add(V.Local.iIDs.UBound,2,V.Local.iX)
+Gui.F_Main.gsfgQ.Rows(V.Local.iX)
+
+F.Intrinsic.Control.For(V.Local.iX,V.Local.iIDs.LBound,V.Local.iIDs.UBound,1)
+	F.Intrinsic.UI.ChangeWaitStatus("Loading Documents...",V.Local.iX,1,V.Local.iIDs.UBound)
+	F.Intrinsic.String.Concat("SELECT * FROM ATG_StandAloneDocs Where FileID = ",V.Local.iIDs(v.Local.iX),V.Local.sQuery)
+	F.odbc.Connection!conx.OpenRecordsetRO("rst",V.Local.sQuery)
+	
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+		V.Local.bProc.Set(False)
+		F.Intrinsic.Control.If(V.Args.sids,=,"")
+			V.Local.bProc.Set(True)
+
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldVal!USER_ID,=,V.Global.iUser)
+				V.Local.bProc.Set(True)
+			F.Intrinsic.Control.else
+				F.Intrinsic.Control.CallSub(Check_grp_security,"Group",V.ODBC.conx!rst.FieldVal!Grp_ID)
+				F.Intrinsic.Control.If(V.Args.bret,=,True)
+					V.Local.bProc.Set(True)
+				F.Intrinsic.Control.Else
+					V.Local.bProc.Set(False)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.endif
+		F.Intrinsic.Control.endif
+		F.Intrinsic.Control.If(V.local.bProc,=,True)
+			F.Intrinsic.Math.Add(V.Local.iRow,1,V.Local.iRow)
+
+			Gui.F_Main.gsfgQ.ApplyStyle(V.Local.iRow,1)
+			Gui.F_Main.gsfgQ.TextMatrix(0,V.Local.iRow,V.ODBC.conx!rst.FieldVal!FileID)
+			Gui.F_Main.gsfgQ.TextMatrix(1,V.Local.irow,V.ODBC.conx!rst.FieldVal!Description)
+			Gui.F_Main.gsfgQ.TextMatrix(2,V.Local.irow,V.ODBC.conx!rst.FieldVal!File)
+			F.Intrinsic.String.Concat("Select GRP_Name FROM ATG_Doc_GRP WHERE Grp_ID = ",V.ODBC.conx!rst.FieldVal!Grp_ID,V.Local.sQuery)
+			F.ODBC.Connection!conx.OpenRecordsetRO("rstD",V.Local.sQuery)
+			F.Intrinsic.Control.if(V.odbc.conx!rstD.EOF,=,False)
+				Gui.F_Main.gsfgQ.TextMatrix(3,V.Local.irow,V.ODBC.conx!rstD.FieldVal!GRP_Name)
+			F.Intrinsic.Control.endif
+			F.ODBC.conx!rstD.close
+
+			Gui.F_Main.gsfgQ.Textmatrix(4,V.Local.irow,V.ODBC.conx!rst.FieldVal!IsPublic)
+			Gui.F_Main.gsfgQ.TextMatrix(5,V.Local.iRow,V.ODBC.conx!rst.FieldVal!FileType)
+
+			
+			F.Intrinsic.String.Concat("Select DESCRIPTION FROM ATG_StandAloneTypes WHERE Link_Type = ",V.ODBC.conx!rst.FieldVal!LinkType,V.Local.sQuery)
+			F.ODBC.Connection!conx.OpenRecordsetRO("rstD",V.Local.sQuery)
+			F.Intrinsic.Control.if(V.odbc.conx!rstD.EOF,=,False)
+				Gui.F_Main.gsfgQ.TextMatrix(6,V.Local.irow,V.ODBC.conx!rstD.FieldVal!Description)
+			F.Intrinsic.Control.endif
+			F.ODBC.conx!rstD.close
+			F.Intrinsic.String.Format(V.ODBC.conx!rst.FieldVal!DateAdded,"YYYY-MM-DD",V.Local.sret)
+			Gui.F_Main.gsfgQ.TextMatrix(7,V.Local.irow,V.local.sret)
+		F.Intrinsic.Control.endif
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.close
+F.Intrinsic.Control.Next(V.Local.iX)
+Gui.f_Main.gsfgQ.FixedRows(1)
+Gui.F_Main.gsfgQ.Visible(true)
+F.Intrinsic.UI.CloseWaitDialog
+
+Program.Sub.populate_grid.End
+
+Program.Sub.load_grp_security.Start
+
+V.Local.sGroups.Declare(String)
+V.Local.iC.Declare(Long)
+V.Local.iGrp.Declare(Long)
+V.Local.squery.Declare(String)
+V.Global.sGrps.Redim(0,0)
+
+
+F.Intrinsic.String.Concat("SELECT GRP_ID, PERMISSION FROM ATG_DOC_SEC WHERE SEC_TYPE = 'U' AND USR_GRP = '",V.Caller.User,"'",V.Local.squery)
+F.ODBC.Connection!conX.OpenRecordsetRO("rstX",V.Local.squery)
+F.Intrinsic.Control.DoUntil(V.ODBC.conX!rstX.EOF,=,True)
+	F.Intrinsic.Control.If(V.ODBC.conX!rstX.FieldVal!PERMISSION,=,True)
+		V.Global.sGrps(v.Global.sGrps.UBound).Set(V.ODBC.conX!rstX.FieldVal!GRP_ID)
+		F.Intrinsic.math.Add(V.global.sGrps.UBound,1,V.Local.iGrp)
+		V.Global.sGrps.RedimPreserve(0,V.Local.iGrp)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rstX.movenext
+F.Intrinsic.Control.loop
+F.ODBC.conX!rstX.close
+
+F.Global.Security.GetUserGroups(V.Caller.User,V.Caller.CompanyCode,V.Local.sGroups)
+F.Intrinsic.String.Split(V.Local.sGroups,"*!*",V.Local.sGroups)
+F.Intrinsic.Control.For(V.Local.iC,V.Local.sGroups.LBound,V.Local.sGroups.UBound,1)
+	F.Intrinsic.String.Concat("SELECT GRP_ID, PERMISSION FROM ATG_DOC_SEC WHERE SEC_TYPE = 'G' AND USR_GRP = '",V.local.sGroups(v.Local.iC),"'",V.Local.squery)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rstX",V.Local.squery)
+	F.Intrinsic.Control.DoUntil(V.ODBC.conX!rstX.EOF,=,True)
+		F.Intrinsic.Control.If(V.ODBC.conX!rstX.FieldVal!PERMISSION,=,True)
+			V.Global.sGrps(v.Global.sGrps.UBound).Set(V.ODBC.conX!rstX.FieldVal!GRP_ID)
+			F.Intrinsic.math.Add(V.global.sGrps.UBound,1,V.Local.iGrp)
+			V.Global.sGrps.RedimPreserve(0,V.Local.iGrp)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conX!rstX.movenext
+	F.Intrinsic.Control.loop
+	F.ODBC.conX!rstX.close
+F.Intrinsic.Control.Next(V.Local.iC)
+
+F.Intrinsic.String.RemoveArrayDuplicates(V.Global.sGrps,V.Global.sGrps)
+
+
+Program.Sub.load_grp_security.End
+
+Program.Sub.saveNewFile.Start
+V.Local.iC.Declare(Long)
+
+V.Local.iType.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.bUNC.Declare(Boolean)
+V.Local.igrp.Declare(String)
+V.Local.bpublic.declare(Boolean)
+V.Local.sMeta.Declare(String)
+V.Local.sFileType.Declare(String)
+V.Local.ipos.Declare(Long)
+V.Local.iRow.Declare(Long)
+V.Local.iFileID.Declare(Long)
+
+F.Intrinsic.Control.if(V.Screen.F_add!dpType.Text,=,"")
+	F.Intrinsic.ui.Msgbox("Must select a link type")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.endif
+
+F.Intrinsic.String.Split(V.Screen.f_add!dpType.text,"-",V.Local.sRet)
+V.Local.iType.Set(V.Local.sRet(0))
+
+F.Intrinsic.Control.if(V.Screen.F_add!dpgrp.Text.trim,=,"")
+	V.Local.igrp.Set(-1)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Screen.f_add!dpGrp.text,"-",V.Local.sRet)
+	V.Local.iGrp.Set(V.Local.sRet(0))
+F.Intrinsic.Control.endif
+
+F.Intrinsic.Control.If(V.Screen.f_add!chkPublic.Value,=,0)
+	V.Local.bPublic.Set(False)
+F.Intrinsic.Control.Else
+	V.Local.bPublic.Set(True)
+F.Intrinsic.Control.endif
+
+'BUild Meta string
+F.Intrinsic.math.Sub(V.Screen.f_add!gsfgMeta.Rows,1,V.Local.iRow)
+
+Gui.f_add.gsfgMeta.Commit
+F.Intrinsic.Control.For(V.Local.iC,0,V.Local.iRow,1)
+	Gui.f_add.gsfgMeta.gettextmatrix(0,V.Local.iC,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		F.Intrinsic.Control.If(V.Local.sMeta.Trim,=,"")
+			V.Local.sMeta.Set(V.Local.sRet)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Concat(V.Local.sMeta,"*!*",V.Local.sRet,V.Local.sMeta)
+		F.Intrinsic.Control.endif
+	F.Intrinsic.Control.endif
+F.Intrinsic.Control.Next(V.Local.ic)
+F.Intrinsic.Control.If(V.Screen.f_add!dpToggle.Text,=,"Web Page")
+	V.Local.sFileType.Set("HTTP")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Debug.Stop
+
+F.Intrinsic.Control.If(V.Screen.f_add!txtFileNum.Text,=,-1)
+	
+	f.Global.DocumentControl.addStandAloneDocument(V.Local.iType,V.Screen.f_add!txtFile.Text,V.Screen.f_add!txtDescription.Text,V.Local.iGrp,V.Global.iUser,V.Local.bUNC,V.local.smeta,V.Local.bpublic,v.Local.sFileType,V.Local.sRet)
+F.Intrinsic.Control.Else
+	V.Local.iFileID.Set(V.Screen.f_add!txtFileNum.Text)
+
+	f.Global.DocumentControl.UpdateStandAloneDocument(V.Local.iFileID,V.Screen.f_add!txtFile.Text,V.Local.iType,V.Screen.f_add!txtDescription.Text,V.Local.iGrp,V.Global.iUser,V.Local.bUNC,V.local.smeta,V.Local.bpublic,v.Local.sRet)
+
+F.Intrinsic.Control.EndIf
+Gui.f_add..Visible(false)
+F.Intrinsic.control.CallSub(Populate_grid,"sIDs","")
+
+
+Program.Sub.saveNewFile.End
+
+Program.Sub.populate_linkTypes.Start
+
+V.Local.shold.Declare(String)
+V.Local.bRet.Declare(Boolean)
+
+Gui.f_add.dpType.ClearItems
+Gui.f_add.dpType.AddItem(" ")
+
+F.odbc.Connection!conX.OpenRecordsetRO("rst","SELECT * FROM ATG_StandAloneTYpes ORDER BY Link_Type")
+F.Intrinsic.Control.dountil(V.ODBC.conX!rst.EOF,=,True)
+	F.Intrinsic.String.Concat(V.ODBC.conX!rst.FieldValTrim!Link_Type," - ",V.odbc.conX!rst.FieldValTrim!Description,V.Local.shold)
+	Gui.f_add.dpType.AddItem(V.Local.shold)
+	F.ODBC.Conx!rst.MoveNext
+F.Intrinsic.Control.Loop
+F.ODBC.Conx!rst.Close
+
+Program.Sub.populate_linkTypes.End
+
+Program.Sub.check_grp_security.Start
+
+V.Local.sgrp.Declare(String)
+V.Local.ic.Declare(Long)
+V.Local.sgrp.Set(V.Args.group)
+F.Intrinsic.Variable.AddRV("bRet",False)
+F.Intrinsic.Control.If(V.Caller.User,=,"SUPERVSR")
+	F.Intrinsic.Variable.AddRV("bRet",True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.endif
+F.Intrinsic.Control.For(V.Local.ic,V.Global.sGrps.LBound,V.Global.sGrps.UBound,1)
+	F.Intrinsic.Control.If(V.Local.sgrp.lcase,=,V.Global.sGrps(v.Local.ic).LCase)
+		F.Intrinsic.Variable.AddRV("bRet",True)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.endif
+F.Intrinsic.Control.Next(V.Local.ic)
+
+Program.Sub.check_grp_security.End
+
+Program.Sub.f_add_unload.Start
+Gui.F_Main..Enabled(true)
+Gui.f_add..Visible(false)
+
+Program.Sub.f_add_unload.End
+
+program.sub.gsfgq_commandclick.start
+V.Local.iRet.Declare(Long)
+V.Local.sMessage.Declare(String)
+V.Local.sret.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.iRow.Declare(Long)
+V.Local.sHold.Declare(String)
+
+F.Intrinsic.control.If(V.Args.column,=,8)
+
+	'View
+	Gui.F_Main.gsfgQ.GetTextMatrix(0,V.args.key,V.Local.sret)
+	F.Intrinsic.Control.If(V.Local.sret.IsNumeric,=,True)
+		V.Local.iRet.Set(V.Local.sret)
+	F.Intrinsic.Control.endif
+
+	F.Intrinsic.String.Concat("SELECT FILE,PATH,FILETYPE  FROM ATG_StandALoneDocs WHERE FILEID = ",V.Local.iret,V.Local.sQuery)
+	F.ODBC.Connection!conx.OpenRecordsetRO("rstD",V.Local.sQuery)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstD.EOF,=,False)
+		F.Intrinsic.Control.If(V.ODBC.conx!rstD.FieldValTrim!FILETYPE,=,"HTTP")
+			F.Intrinsic.String.Left(V.ODBC.conx!rstD.FieldValTrim!File,4,V.Local.shold)
+			F.Intrinsic.Control.If(V.Local.shold.Ucase,<>,"HTTP")
+				F.Intrinsic.string.Concat("http://",V.ODBC.conx!rstD.FieldValTrim!File,V.Local.sret)
+			F.Intrinsic.Control.Else
+				V.Local.sret.Set(V.ODBC.conx!rstD.FieldValTrim!file)
+			F.Intrinsic.Control.endif
+
+		Gui.f_advance.htmlX.Navigate(V.Local.sRet)
+		Gui.F_Advance..Show
+
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Right(V.ODBC.conx!rstD.FieldValTrim!Path,1,V.Local.shold)
+			F.Intrinsic.Control.If(V.Local.shold,=,"\")
+					F.Intrinsic.String.Concat(V.ODBC.conx!rstD.FieldValTrim!Path,V.ODBC.conx!rstD.FieldValTrim!FIle,V.Local.sret)
+				F.Intrinsic.Control.ElseIf(V.Local.shold,<>,"\")
+					F.Intrinsic.String.Concat(V.ODBC.conx!rstD.FieldValTrim!Path,"\",V.ODBC.conx!rstD.FieldValTrim!FIle,V.Local.sret)
+				F.Intrinsic.Control.endif
+			F.Intrinsic.Task.ShellExec(V.Caller.Handle,"Open",V.Local.sret,"","",0)
+
+		F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rstD.Close
+
+F.Intrinsic.Control.Elseif(V.Args.column,=,9)
+	'Edit
+	F.Intrinsic.Control.CallSub(Prepareadd,"bEdit",True)
+	Gui.F_Main.gsfgQ.GetTextMatrix(0,V.args.key,V.Local.sret)
+	Gui.f_add.txtFileNum.text(V.local.sRet)
+	F.Intrinsic.Control.If(V.Local.sret.IsNumeric,=,True)
+		V.Local.iRet.Set(V.Local.sret)
+	F.Intrinsic.Control.endif
+	Gui.F_Main.gsfgQ.GetTextMatrix(4,V.args.key,V.Local.sret)
+	F.Intrinsic.Control.If(V.Local.sret,=,"True")
+		Gui.f_add.chkPublic.Value(1)
+	F.Intrinsic.Control.Endif
+
+	F.Intrinsic.String.Concat("SELECT *  FROM ATG_StandALoneDocs WHERE FILEID = ",V.Local.iret,V.Local.sQuery)
+	F.ODBC.Connection!conx.OpenRecordsetRO("rstD",V.Local.sQuery)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstD.EOF,=,False)
+		Gui.f_add.txtDescription.text(V.odbc.conx!rstD.FieldValTrim!Description)
+		F.Intrinsic.String.Concat(V.ODBC.conx!rstD.FieldValTrim!Path,V.ODBC.conx!rstD.FieldValTrim!File,V.Local.sret)
+		Gui.f_add.txtFile.Text(V.Local.sret)
+		F.Intrinsic.Control.If(V.odbc.conx!rstD.FieldVal!Grp_ID,<>,-1)
+			F.Intrinsic.string.Concat("SELECT GRP_NAME FROM ATG_DOC_GRP WHERE GRP_ID = ",V.odbc.conx!rstD.FieldVal!Grp_ID,V.Local.sQuery)
+			F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sQuery)
+			F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+				F.Intrinsic.string.Concat(V.odbc.conx!rstD.FieldVal!Grp_ID," - ",V.ODBC.conX!rst.FieldValTrim!GRP_NAME,V.Local.sRet)
+				Gui.f_add.dpGrp.text(V.Local.sRet)
+			F.Intrinsic.Control.EndIf
+			F.ODBC.conX!rst.Close
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.If(V.odbc.conx!rstD.FieldVal!LinkTYpe,<>,-1)
+			F.Intrinsic.string.Concat("SELECT Description FROM ATG_StandAloneTypes WHERE Link_Type = ",V.odbc.conx!rstD.FieldVal!LinkType,V.Local.sQuery)
+			F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sQuery)
+			F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+				F.Intrinsic.string.Concat(V.odbc.conx!rstD.FieldVal!LinkType," - ",V.ODBC.conX!rst.FieldValTrim!Description,V.Local.sRet)
+				Gui.f_add.dpType.text(V.Local.sRet)
+			F.Intrinsic.Control.EndIf
+			F.ODBC.conX!rst.Close
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rstD.close
+	F.Intrinsic.string.Concat("SELECT Meta FROM ATG_StandAloneMeta WHERE FILEIDType = 2 AND FILEID = ",V.Local.iret," ORDER BY SEQUENCE",V.Local.sQuery)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sQuery)
+	F.Intrinsic.Control.DoUNtil(V.ODBC.conX!rst.EOF,=,True)
+		F.Intrinsic.Control.If(V.Local.iRow,<,V.Screen.f_add!gsfgMeta.Rows)
+			Gui.f_add.gsfgMeta.TextMatrix(0,V.Local.iRow,V.ODBC.conx!rst.FieldValTrim!Meta)
+			F.Intrinsic.Math.Add(V.Local.iRow,1,V.Local.iRow)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rst.Movenext
+	F.Intrinsic.Control.loop
+	F.ODBC.conX!rst.Close
+
+	Gui.f_add..Show
+
+F.Intrinsic.Control.ElseIf(V.Args.column,=,10)
+	'Delete
+	Gui.F_Main.gsfgQ.GetTextMatrix(2,V.args.key,V.Local.sret)
+	F.Intrinsic.String.Concat("Are you sure you want to delete the document: ",V.Local.sret,V.Local.sMessage)
+	F.Intrinsic.UI.Msgbox(V.Local.sMessage,"Delete Document",4,V.Local.iRet)
+	F.Intrinsic.control.If(V.Local.iRet,=,6)
+		Gui.F_Main.gsfgQ.GetTextMatrix(0,V.args.key,V.Local.sret)
+		F.Intrinsic.String.Concat("DELETE FROM ATG_StandALoneDocs WHERE FILEID = ",V.Local.sret,V.Local.squery)
+		F.ODBC.Connection!conx.execute(V.Local.sQuery)
+
+		F.Intrinsic.String.Concat("DELETE FROM ATG_StandALoneMeta WHERE FILEID = ",V.Local.sret,V.Local.squery)
+		F.ODBC.Connection!conx.execute(V.Local.sQuery)
+
+		F.Intrinsic.control.CallSub(Populate_grid,"sIDs","")
+		F.Intrinsic.UI.CloseWaitDialog
+		Gui.F_Main.gsfgQ.Visible(true)
+
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+program.sub.gsfgq_commandclick.end
+
+program.sub.f_advance_unload.start
+gui.F_Advance..Visible(false)
+Gui.F_Advance.htmlX.Navigate("about:blank")
+
+program.sub.f_advance_unload.end
+
+Program.Sub.prepareAdd.Start
+V.Local.iX.Declare(Long)
+F.Intrinsic.Control.CallSub(Populate_grp)
+F.Intrinsic.Control.CallSub(Populate_linktypes)
+Gui.f_add.dptoggle.ClearItems
+
+Gui.f_add.dpToggle.AddItem("File")
+Gui.f_add.dpToggle.AddItem("Web Page")
+Gui.f_add.dptoggle.Text("File")
+Gui.f_add.txtFileNum.Text("-1")
+Gui.f_add.txtDescription.Text("")
+Gui.f_add.txtFile.Text("")
+Gui.f_add.gsfgMeta.Cols(1)
+Gui.f_add.chkPublic.Value(0)
+Gui.f_add.gsfgMeta.Rows(1)
+Gui.f_add.gsfgMeta.Rows(10)
+Gui.f_add.gsfgMeta.TextMatrix(0,0,"")
+
+F.Intrinsic.control.For(V.Local.iX,0,9,1)
+	Gui.f_add.gsfgMeta.ApplyStyle(V.Local.iX,1)
+F.Intrinsic.Control.Next(V.Local.iX)
+Gui.f_add.gsfgMeta.setcolumnpercentages(".99")
+
+F.Intrinsic.Control.If(V.Args.bEdit)
+	Gui.f_add.dpToggle.Enabled(False)
+	Gui.f_add.txtFile.Enabled(False)
+	Gui.f_add.cmdBrowseFile.Enabled(False)
+F.Intrinsic.Control.Else
+	Gui.f_add.dpToggle.Enabled(True)
+	Gui.f_add.txtFile.Enabled(True)
+	Gui.f_add.cmdBrowseFile.Enabled(True)
+F.Intrinsic.Control.EndIf
+
+Program.Sub.prepareAdd.End
+
+program.sub.cmdrefresh_click.start
+
+F.Intrinsic.control.CallSub(Populate_grid,"sIDs","")
+f.Intrinsic.UI.CloseWaitDialog
+Gui.F_Main.gsfgQ.Visible(True)
+
+program.sub.cmdrefresh_click.end
+
+program.sub.f_search_unload.start
+Gui.F_Search..Visible(false)
+
+program.sub.f_search_unload.end
+
+Program.Sub.Comments.Start
+${$5$}$20.1.8474.24170$}$1
+${$6$}$tsmith$}$20230403091201926$}$xqPbj9atw05FglvzeFsZ9cqXP+qvG6tXO9VOOsVpNIMaZeg9K30fQP5x2vLf32ptpGHfESNKzTE=
+Program.Sub.Comments.End
